@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filmai0</title>
+    <style>
+
+body {
+            background-color: lightskyblue;
+            
+            
+        }
+        
+        .div1 {
+        
+        background-color: transparent;
+        color: white;
+        display: inline-block;
+        
+        }
+         
+        
+        .ieskotiFilmu {
+        
+        margin-left: 400px;
+        margin-top: 20px;
+        position: relative;
+        
+        
+        }
+        div {
+            display: inline-block;
+            position: absolute;
+        }
+        
+        .ieskotiInput {
+
+            height: 30px;
+            width: 300px;
+            border-color:white;
+            border-style: solid;
+            color: white;
+
+        }
+
+        input {
+            background-color:transparent
+        }
+
+        input::placeholder {
+            font-size: 20px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+
+        }
+      
+
+        .ieskotiButton {
+            height: 35px;
+            width: 120px;
+            background-color: transparent;
+            color: white;
+            border-color: white;
+            border-style: solid;
+            cursor: pointer;
+        }
+
+        .atsijungtiButton {
+            height: 35px;
+            width: 90px;
+            background-color: transparent;
+            color: white;
+            border-color: white;
+            border-style: solid;
+            cursor: pointer;
+            margin-left: -150px;
+            margin-right: 200px;
+        }
+
+        .atsijungtiButton:active {
+            border-color:rgb(214, 205, 205) ;
+            color:rgb(214, 205, 205)
+        }
+
+        .ieskotiButton:active {
+            border-color:rgb(214, 205, 205) ;
+            color:rgb(214, 205, 205)
+           
+        }
+
+        
+
+        .filmuPav {
+
+            margin-top: 230px;
+            color: white;
+            background-color: blue;
+            border-width: 4px;
+            border-style: solid;
+            margin-left: 300px;
+            
+        
+        }
+
+        .table {
+            margin-left: 10px;
+            text-align: left;
+        }
+        
+        .atsiliepimai {
+            color: white;
+            text-align: center;
+            margin-top: 700px
+            
+          
+
+        }
+
+        option {
+            color:black;
+        }
+
+        
+        .pasirinktiButton {
+
+            height: 30px;
+            width: 120px;
+            background-color: transparent;
+            color: white;
+            border-color: white;
+            border-style: solid;
+            cursor: pointer;
+
+
+        }
+
+        .pasirinktiButton:active {
+            border-color:rgb(214, 205, 205) ;
+            color:rgb(214, 205, 205)
+        }
+
+        .adminClass {
+
+            justify-content: center;
+            margin-top: 550px;
+            padding-right: 75px;
+            margin-left: 300px;
+            color: white;
+            background: linear-gradient(to right, rgb(100, 43, 115), rgb(198, 66, 110));
+            border-image: linear-gradient(to right, rgb(61, 23, 71), darkorchid) 1;
+            border-width: 4px;
+            border-style: solid;
+            margin-top: 450px;
+            
+
+        }
+
+        input{
+    color: #ffffff;
+}
+         .PridetiFilmaButton {
+
+             height: 25px;
+             font-size: 15px;
+            width: 90px;
+            background-color: transparent;
+            color: white;
+            border-color: white;
+            border-style: solid;
+            cursor: pointer;
+
+}
+
+
+        .PridetiFilmaButton:active {
+
+            border-color:rgb(214, 205, 205) ;
+            color:rgb(214, 205, 205)
+
+
+        }
+
+
+
+.inputTextBox[type="text"], textarea {
+
+    background-color : transparent;
+    border: none;
+    border-bottom:2px solid black;
+    outline: none;
+
+}
+
+        
+
+        
+            </style>
+</head>
+<body>
+
+
+
+
+<div>
+<div class="div1">
+    <h1 class="textanimation"> <u>Sveiki, v1</u></h1>
+</div>
+
+<div class="ieskotiFilmu">
+    <button onclick="atsijungti()" class="atsijungtiButton">Atsijungti</button>  
+    <input id="inputFilmas" class="ieskotiInput" placeholder="Ieskoti filmu" type="text">
+    <button onclick="tikrinti()" id="tikrintiButton" class="ieskotiButton" type="submit"> <strong>Ieskoti</strong></button>
+    
+    
+    
+    </div>
+    </div>
+
+<div class="filmuPav">
+    <p style="margin-left: 20px;font-size: 18px;"> <strong>Top 5 Geriausiu siu metu siaubo filmu(is imdb) </strong></p>
+    <table class="table" id="addFilmai">
+    <tr  id="tr1">
+        <th style=" font-size: 20px; color: white">
+          Filmas 10 su n10   reitingu
+        </th>
+    </tr>
+    <tr id="tr2">
+        <th style=" font-size: 20px; color: white">
+             Filmas 20 su n20  reitingu
+        </th>
+    </tr>
+    <tr id="tr3">
+        <th style=" font-size: 20px; color: white">
+             Filmas 30 su n30  reitingu
+        </th>
+    </tr>
+    <tr id="tr4">
+        <th style=" font-size: 20px; color: white">
+             Filmas 40 su n40  reitingu
+        </th>
+    </tr>
+
+    <tr id="tr5">
+        <th style=" font-size: 20px; color: white">
+             Filmas 50 su n50  reitingu
+        </th>
+    </tr>
+        
+    </table>
+
+
+
+
+
+<script>
+
+function tikrinti() {
+
+const Filmas = document.getElementById('inputFilmas').value;
+const mgtk = document.getElementById('tikrintiButton').value;
+
+if ( Filmas == "n10" || Filmas == "n10") {
+            window.location = "n10.html";
+            return false;
+        }
+
+else if ( Filmas == "n20" || Filmas == "n20" ) {
+            window.location = "n20.html";
+            return false;
+}
+
+else if (Filmas == "n30" || Filmas == "n30") {
+            window.location = "n30.html";
+            return false;
+}
+
+else if (Filmas == "n40" || Filmas == "n40") {
+            window.location = "n40.html";
+            return false;
+}
+
+else if (Filmas == "n50" || Filmas == "n50") {
+            window.location = "n50.html";
+            return false;
+}
+
+        else {
+            alert('Tokio filmo nera!')
+        }
+
+
+    }
+
+
+
+function atsijungti() {
+    window.location = "index.html";
+
+}
+
+
+
+</script>
+
+
+</body>
+</html>

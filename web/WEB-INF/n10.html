@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beau is Afraid (2023)</title>
+    <style>
+        body {
+            background-color: lightblue;
+            color: black;
+        }
+
+        .container {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .movie-title {
+            font-size: 24px;
+            text-align: center;
+            margin-top: 0;
+        }
+
+        .watch-button {
+            text-decoration: none;
+            color: white;
+            background-color: black;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .watch-button:hover {
+            background-color: rgb(36, 35, 35);
+        }
+
+        .movie-details {
+            margin-top: 20px;
+        }
+
+        .movie-details p {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 80%;
+            text-align: left;
+        }
+
+        .table th,
+        .table td {
+            border: 2px solid white;
+            padding: 10px;
+            color: white;
+        }
+
+        .table th {
+            background-color: blue;
+        }
+
+        .official-trailer {
+            margin: 20px auto;
+        }
+
+        .video-embed {
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .action-button {
+            height: 30px;
+            color: white;
+            cursor: pointer;
+            border: none;
+            background-color: black;
+            margin-right: 10px;
+        }
+
+        .action-button:active {
+            background-color: rgb(36, 35, 35);
+        }
+
+        .movie-rating {
+            font-size: 20px;
+            color: white;
+        }
+
+        .more-info-link {
+            font-size: 20px;
+            color: red;
+            text-decoration: none;
+        }
+
+        .comments-section {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #inputVardas,
+        #kmt {
+            margin-bottom: 10px;
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        #kmt {
+            resize: none;
+        }
+
+        #skelbtiBtn {
+            height: 30px;
+            background-color: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #komentarai {
+            font-size: 18px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 class="movie-title">Beau is Afraid (2023)</h1>
+
+    <a target="_blank" class="ziuretimgtA" href="https://a24films.com/films/talktome">
+        <button class="watch-button">Žiūrėti filmą</button>
+    </a>
+
+    <div class="movie-details">
+        <p>Filmo kategorija: Siaubo, Trileris</p>
+        <p>Kai grupė draugų atranda, kaip užburti dvasias naudojant balzamuotą ranką, juos užkabina naujas jaudulys, kol vienas iš jų nueina per toli ir išlaisvina bauginančias antgamtines jėgas.</p>
+    </div>
+
+    <table class="table">
+        <tr>
+            <th>Filmo režisieriai:</th>
+            <td>Amy Ryan</td>
+            <td>Parker Posey</td>
+        </tr>
+        <tr>
+            <th>Filmo žvaigždės:</th>
+            <td>Joaquin Phoenix</td>
+            <td>Nathan Lane</td>
+            <td>Stephen McKinley Henderson</td>
+            <td>Patti LuPone</td>
+        </tr>
+    </table>
+
+    <div class="official-trailer">
+        <p><strong>Oficialus filmo anonsas</strong></p>
+        <iframe class="video-embed" width="500" height="360" src="https://www.uscannenbergmedia.com/resizer/Im24qEC-axdYJZvZn2R7ns-i2Bs=/800x0/filters:format(jpg):quality(70)/cloudfront-us-east-1.images.arcpublishing.com/uscannenberg/5PENHZCTTZH6JKNLUYYXHREUFU.jpg"></iframe>
+    </div>
+
+    <div class="buttons">
+        <button class="action-button" onclick="atgal()" id="btn">Atgal į pagrindinį puslapį</button>
+        <button class="action-button" onclick="ankstesnis()" id="btn3">&lt;&lt;</button>
+    </div>
+
+    <div class="movie-rating">
+        <p>Filmo įvertinimas: 8.4/10 (IMDb)</p>
+    </div>
+
+    <p><strong><a target="_blank" class="more-info-link" href="https://en.wikipedia.org/wiki/Talk_to_Me_(2022_film)">Daugiau informacijos rasite čia</a></strong></p>
+
+    <div class="comments-section">
+        <p style="font-size: 30px; color: black;">Komentarų skiltis</p>
+        <input id="inputVardas" placeholder="Vardas" type="text"><br>
+        <textarea name="komentaras" id="kmt" cols="30" rows="3" maxlength="90" placeholder="Komentaras"></textarea><br>
+        <button onclick="komentaras()" id="skelbtiBtn">Paskelbti</button>
+        <p id="komentarai"></p>
+    </div>
+</div>
+
+<script>
+    function atgal() {
+        window.location = "index.html";
+    }
+
+    function ankstesnis() {
+        window.location = "n20.html";
+    }
+
+    function komentaras() {
+        const Vardas = document.getElementById('inputVardas').value;
+        const kmt = document.getElementById('kmt').value;
+        const komentarai = document.getElementById('komentarai');
+
+        if (Vardas === "" || kmt === "") {
+            alert('Jūs neįvedėte savo vardo arba palikote tuščią komentarą!');
+            komentarai.innerHTML = "";
+        } else {
+            komentarai.innerHTML += Vardas + ": " + kmt + "<br>";
+        }
+    }
+</script>
+</body>
+</html>

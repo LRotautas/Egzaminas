@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmai</title>
+    <style>
+        body {
+            background-color: lightskyblue;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            text-decoration: underline;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-input {
+            height: 30px;
+            width: 300px;
+            border: 2px solid white;
+            border-radius: 5px;
+            background-color: transparent;
+            color: white;
+            font-size: 16px;
+            padding: 5px;
+        }
+
+        .search-button {
+            height: 35px;
+            width: 120px;
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .logout-button {
+            height: 35px;
+            width: 90px;
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .film-list {
+            margin-top: 20px;
+            background-color: blue;
+            border: 4px solid white;
+            border-radius: 5px;
+            padding: 20px;
+        }
+
+        .film-list h2 {
+            font-size: 24px;
+            color: white;
+        }
+
+        .film-item {
+            font-size: 20px;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">Sveiki, v1</div>
+        <div class="search-container">
+            <input id="inputFilmas" class="search-input" placeholder="Ieškoti filmų" type="text">
+            <button onclick="tikrinti()" id="tikrintiButton" class="search-button">Ieškoti</button>
+            <button onclick="atsijungti()" class="logout-button">Atsijungti</button>
+        </div>
+    </div>
+
+    <div class="film-list">
+        <h2>Top 5 Geriausių šių metų siaubo filmų (iš IMDb)</h2>
+        <div class="film-item">N1 Talk to Me  su numeris1 reitingu</div>
+        <div class="film-item">N2 Hereditary su numeris2 reitingu</div>
+        <div class="film-item">N3 Poltergeistas su numeris3 reitingu</div>
+        <div class="film-item">N4 Prieglauda su numeris4 reitingu</div>
+        <div class="film-item">N5 Vaikų žaidimai su numeris5 reitingu</div>
+    </div>
+
+    <script>
+        function tikrinti() {
+            const Filmas = document.getElementById('inputFilmas').value.toLowerCase();
+
+            switch (Filmas) {
+                case 'n1':
+                    window.location.href = "n1.html";
+                    break;
+                case 'n2':
+                    window.location.href = "n2.html";
+                    break;
+                case 'n3':
+                    window.location.href = "n3.html";
+                    break;
+                case 'n4':
+                    window.location.href = "n4.html";
+                    break;
+                case 'n5':
+                    window.location.href = "n5.html";
+                    break;
+                default:
+                    alert('Tokio filmo nėra!');
+            }
+        }
+
+        function atsijungti() {
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>

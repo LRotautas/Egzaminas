@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmai</title>
+    <style>
+        body {
+            background-color: #3498db;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        .header {
+            background-color: #2980b9;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .search-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .search-input {
+            height: 30px;
+            width: 300px;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            padding: 5px;
+            margin-right: 10px;
+            background-color: transparent;
+            color: white;
+            font-size: 16px;
+        }
+        
+        .search-button {
+            height: 35px;
+            width: 120px;
+            background-color: transparent;
+            color: white;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .top-movies {
+            margin-top: 30px;
+            color: white;
+            background-color: #2980b9;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        
+        .movie-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .movie-list li {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1><u>Sveiki, admin</u></h1>
+    </div>
+    
+    <div class="container">
+        <div class="search-container">
+            <input id="inputFilmas" class="search-input" placeholder="Ieškoti filmų" type="text">
+            <button onclick="tikrinti()" class="search-button">Ieškoti</button>
+        </div>
+
+        <div class="top-movies">
+            <h2>Top 5 Geriausių šių metų siaubo filmų (iš IMDb)</h2>
+            <ul class="movie-list">
+                <li>Filmas 1 su n1 reitingu</li>
+                <li>Filmas 2 su n2 reitingu</li>
+                <li>Filmas 3 su n3 reitingu</li>
+                <li>Filmas 4 su n4 reitingu</li>
+                <li>Filmas 5 su n5 reitingu</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function tikrinti() {
+            const Filmas = document.getElementById('inputFilmas').value;
+            const movies = ["n1", "n2", "n3", "n4", "n5"];
+            
+            if (movies.includes(Filmas.toLowerCase())) {
+                window.location = `${Filmas.toLowerCase()}.html`;
+            } else {
+                alert('Tokio filmo nėra!');
+            }
+        }
+    </script>
+</body>
+</html>
